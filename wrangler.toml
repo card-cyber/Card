@@ -1,5 +1,5 @@
 # Cloudflare Workers Builds bu dosyayı okur (Deploy command: npx wrangler deploy)
-name = "gultekin-card-bot"
+name = "card"
 main = "bot/worker.js"
 compatibility_date = "2025-09-01"
 workers_dev = true

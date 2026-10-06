@@ -3,18 +3,18 @@
 Bot, Telegram'da herhangi bir sohbette `@GultekinCardBot` yazınca kart görseli + yazı + 6 inline butonu **sizin hesabınızdan** gönderir.
 
 ## 1. Cloudflare Worker
-1. https://dash.cloudflare.com → ücretsiz hesap → **Workers & Pages** → **Create** → **Create Worker** → ad: `gultekin-card-bot` → **Deploy**.
+1. https://dash.cloudflare.com → ücretsiz hesap → **Workers & Pages** → **Create** → **Create Worker** → ad: `card` → **Deploy**.
 2. **Edit code** → içindekini silip `bot/worker.js` dosyasının tamamını yapıştırın → **Deploy**.
 3. **Settings → Variables and Secrets** → **Add** (tip: *Secret*):
    - `BOT_TOKEN` = BotFather'ın verdiği token
    - `WEBHOOK_SECRET` = rastgele uzun bir metin (örn. 30 harf/rakam)
-4. Worker adresinizi not edin: `https://gultekin-card-bot.<hesap>.workers.dev`
+4. Worker adresinizi not edin: `https://card.card007800.workers.dev`
 
 ## 2. Telegram'a adresi bildirme
 Tarayıcıda tek seferlik açın (köşeli parantezleri kaldırın):
 
 ```
-https://api.telegram.org/bot[BOT_TOKEN]/setWebhook?url=https://gultekin-card-bot.[hesap].workers.dev/webhook&secret_token=[WEBHOOK_SECRET]&allowed_updates=["inline_query","message"]
+https://api.telegram.org/bot[BOT_TOKEN]/setWebhook?url=https://card.card007800.workers.dev/webhook&secret_token=[WEBHOOK_SECRET]&allowed_updates=["inline_query","message"]
 ```
 `{"ok":true,"result":true,...}` görürseniz tamam.
 
