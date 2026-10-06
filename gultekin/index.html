@@ -54,6 +54,8 @@ body{font-family:'Plus Jakarta Sans','Segoe UI',Roboto,Helvetica,Arial,sans-seri
 .info a{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.8)}
 .info svg{width:20px;height:20px;fill:var(--gold2);filter:drop-shadow(0 2px 3px rgba(0,0,0,.6))}
 .share{margin:14px auto 0;display:block;background:none;border:0;color:rgba(244,208,106,.85);font:700 12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.8px;cursor:pointer;text-transform:uppercase;padding:6px 10px}
+#toast{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));max-width:388px;margin:0 auto;padding:14px 16px;border-radius:14px;background:rgba(6,21,43,.96);border:1px solid var(--gold);color:#fff;font-size:13px;font-weight:600;text-align:center;opacity:0;transform:translateY(20px);pointer-events:none;transition:.3s}
+#toast.on{opacity:1;transform:none}
 </style>
 </head>
 <body>
@@ -86,14 +88,18 @@ body{font-family:'Plus Jakarta Sans','Segoe UI',Roboto,Helvetica,Arial,sans-seri
   </main>
  </div>
 </div>
+<div id="toast" role="status"></div>
 <script>
-/* Android: paylaşım menüsüyle Kişiler uygulamasını doğrudan aç; olmazsa/iPhone'da vcf bağlantısı çalışır */
+/* Android: paylaşım menüsüyle Kişiler uygulamasını aç; olmazsa vcf indirilir ve yönerge gösterilir. iPhone'da vcf bağlantısı doğrudan Kişi Ekle açar */
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),6000)}
 document.getElementById('addBtn').addEventListener('click',async e=>{
- if(!/Android/i.test(navigator.userAgent)||!navigator.canShare)return;
+ if(!/Android/i.test(navigator.userAgent))return;
  e.preventDefault();
- try{const r=await fetch('Gultekin_Oksuz.vcf'),b=await r.blob(),f=new File([b],'Gultekin_Oksuz.vcf',{type:'text/vcard'});
-  if(navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(err){if(err&&err.name==='AbortError')return}
- location.href='Gultekin_Oksuz.vcf?'+Date.now()});
+ if(navigator.canShare){try{const r=await fetch('Gultekin_Oksuz.vcf'),b=await r.blob();
+  for(const type of ['text/vcard','text/x-vcard','text/directory']){const f=new File([b],'Gultekin_Oksuz.vcf',{type});
+   if(navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}}catch(err){if(err&&err.name==='AbortError')return}}
+ location.href='Gultekin_Oksuz.vcf?'+Date.now();
+ toast('Dosya indi: bildirimden "Aç" veya İndirilenler\'den dosyaya dokunup Kişiler\'e kaydedin');});
 function shareCard(){if(navigator.share){navigator.share({title:'Gültekin Öksüz - TheListing.io',text:'Gültekin Öksüz | CFO - TheListing.io Dijital Kartvizit',url:location.href}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert('Sayfa bağlantısı panoya kopyalandı!'))}else{alert(location.href)}}
 /* 3B eğim: parmak/fare ile kartı çevir, bırakınca yüzer hale dön */
 (function(){const s=document.getElementById('stack'),c=document.getElementById('card');let t;
