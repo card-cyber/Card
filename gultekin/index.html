@@ -3,88 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0b0d12">
+<meta name="theme-color" content="#14161b">
 <title>Gültekin Öksüz - CFO | TheListing.io</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<meta property="og:title" content="Gültekin Öksüz - CFO | TheListing.io">
+<meta property="og:description" content="Exchange Relations &amp; Listings for Web3 Projects">
+<meta property="og:image" content="https://card-cyber.github.io/Card/gultekin/kart.webp">
 <style>
-:root{--gold:#e5b943;--gold2:#f4d06a;--navy:#06152b}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:#14161b}
 html,body{min-height:100%}
-body{font-family:'Plus Jakarta Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#fff;min-height:100dvh;display:flex;justify-content:center;align-items:center;padding:30px 0 90px;overflow-x:hidden;
- background:
-  radial-gradient(ellipse at 15% 0%,rgba(255,255,255,.16),transparent 55%),
-  radial-gradient(ellipse at 50% 115%,rgba(0,0,0,.75),transparent 60%),
-  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.35'/></svg>"),
-  #1a1d24}
-.scene{position:relative;width:100%;max-width:420px;padding:0 26px 0 18px}
-/* arkadaki kart destesi: sağda ince kenarlar */
-.layer{position:absolute;top:0;bottom:0;left:18px;right:26px;border-radius:28px;background:linear-gradient(180deg,#1c2c4b,#0a1630);border-right:2px solid #c9d1de;box-shadow:0 14px 30px rgba(0,0,0,.45)}
-.l1{transform:translate(6px,-2px)}.l2{transform:translate(12px,-4px)}.l3{transform:translate(18px,-6px)}.l4{transform:translate(24px,-8px);opacity:.9}
-.card{position:relative;border-radius:28px;overflow:hidden;text-align:center;padding:20px 18px 40px;
- background:linear-gradient(180deg,rgba(2,10,24,.05),rgba(2,10,24,.35)),url('kartvizit/bg.webp') center/cover,var(--navy);
- box-shadow:0 26px 50px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.14),inset 0 1px 0 rgba(255,255,255,.18)}
-.card::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(120deg,rgba(255,255,255,.10),rgba(255,255,255,0) 35%)}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:0 0 0 4px rgba(229,185,67,.18),0 0 26px rgba(229,185,67,.4),0 10px 20px rgba(0,0,0,.5)}
-.logo{width:158px;height:158px;margin:-14px -8px -12px 0;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(0,0,0,.65))}
-.name{margin-top:6px;font-size:29px;font-weight:800;letter-spacing:-.6px;text-transform:uppercase;line-height:1.1;
- background:linear-gradient(180deg,#fff0b0 0%,#f2cf62 40%,#c39420 62%,#f2cf62 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
- filter:drop-shadow(0 1px 0 #7a5a10) drop-shadow(0 3px 0 #4d3708) drop-shadow(0 8px 10px rgba(0,0,0,.6))}
-.title{margin-top:8px;font-size:17px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#ffe9a6;text-shadow:0 2px 6px rgba(0,0,0,.8)}
-.subtitle{margin-top:6px;font-size:13px;color:#e4ecf8;text-shadow:0 1px 6px rgba(0,0,0,.8)}
-/* fırçalanmış altın plaka buton */
-.cta{text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;margin:20px 0 18px;border:1px solid #f3da86;border-radius:6px;cursor:pointer;
- font:800 17px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:1.3px;text-transform:uppercase;color:#1d1405;text-shadow:0 1px 0 rgba(255,255,255,.4);
- background:repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 1px,rgba(0,0,0,.06) 1px 3px),linear-gradient(160deg,#f6e08f 0%,#cfa23a 30%,#efd47a 55%,#b88b22 80%,#e9c960 100%);
- box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 -2px 0 rgba(110,75,5,.6),0 5px 0 #6e4f0c,0 12px 20px rgba(0,0,0,.55);transition:transform .08s,box-shadow .08s}
-.cta:active{transform:translateY(4px);box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 -2px 0 rgba(110,75,5,.6),0 1px 0 #6e4f0c,0 4px 8px rgba(0,0,0,.5)}
-.cta svg{width:20px;height:20px;fill:#1d1405}
-.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:14px}
-.act{display:flex;flex-direction:column;align-items:center;gap:7px;padding:8px 2px;border-radius:12px;color:#fff;text-decoration:none;font-size:12px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.8)}
-.act:active{background:rgba(229,185,67,.12)}
-.act svg{width:32px;height:32px;fill:var(--gold2);filter:drop-shadow(0 2px 0 #7a5a10) drop-shadow(0 5px 6px rgba(0,0,0,.6))}
-.info{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px}
-.info a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.8)}
-.info svg{width:19px;height:19px;fill:var(--gold2);filter:drop-shadow(0 2px 3px rgba(0,0,0,.6))}
-.share{margin:12px auto 0;display:block;background:none;border:0;color:rgba(244,208,106,.85);font:700 11.5px 'Plus Jakarta Sans',sans-serif;letter-spacing:.8px;cursor:pointer;text-transform:uppercase;padding:6px 10px}
-/* sol altta altın madeni para */
-.coin{position:absolute;left:10px;bottom:-62px;width:104px;height:104px;border-radius:50%;z-index:3;display:flex;align-items:center;justify-content:center;
- background:radial-gradient(circle at 35% 30%,#fff1b0,#e2b53c 45%,#9a6f12 100%);box-shadow:inset 0 0 0 4px #b8891c,inset 0 0 0 7px #f6dc85,0 14px 20px rgba(0,0,0,.65)}
-.coin span{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 40% 30%,#f2cf62,#c39420);box-shadow:inset 0 3px 6px rgba(0,0,0,.35),inset 0 -2px 3px rgba(255,255,255,.4)}
-.coin img{width:84px;height:84px;object-fit:contain;filter:drop-shadow(0 2px 2px rgba(0,0,0,.5))}
-#toast{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));max-width:388px;margin:0 auto;padding:14px 16px;border-radius:14px;background:rgba(6,21,43,.96);border:1px solid var(--gold);color:#fff;font-size:13px;font-weight:600;text-align:center;opacity:0;transform:translateY(20px);pointer-events:none;transition:.3s;z-index:9}
+body{min-height:100dvh;display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden}
+body::before{content:"";position:fixed;inset:-40px;background:url('kart.webp') center/cover;filter:blur(28px) brightness(.55);z-index:-1}
+.wrap{position:relative;width:min(100vw,calc(100dvh * 1024 / 1536),640px);aspect-ratio:1024/1536}
+.wrap img{display:block;width:100%;height:100%;user-select:none;-webkit-user-drag:none}
+.wrap svg{position:absolute;inset:0;width:100%;height:100%}
+.wrap a{outline:none}
+.wrap polygon{fill:transparent;cursor:pointer;transition:fill .12s}
+.wrap a:active polygon,.wrap a:focus-visible polygon{fill:rgba(255,255,255,.22)}
+#toast{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));max-width:388px;margin:0 auto;padding:14px 16px;border-radius:14px;background:rgba(6,21,43,.96);border:1px solid #e5b943;color:#fff;font:600 13px/1.4 system-ui,sans-serif;text-align:center;opacity:0;transform:translateY(20px);pointer-events:none;transition:.3s;z-index:9}
 #toast.on{opacity:1;transform:none}
 </style>
 </head>
 <body>
-<div class="scene">
- <div class="layer l4"></div><div class="layer l3"></div><div class="layer l2"></div><div class="layer l1"></div>
-  <main class="card" id="card">
-   <div class="top">
-    <img class="avatar" src="kartvizit/avatar.jpg" alt="Gültekin Öksüz">
-    <img class="logo" src="kartvizit/logo-t.png" alt="The Listing">
-   </div>
-   <h1 class="name">Gültekin Öksüz</h1>
-   <div class="title">CFO • TheListing.io</div>
-   <p class="subtitle">Exchange Relations &amp; Listings for Web3 Projects</p>
-
-   <a class="cta" id="addBtn" href="Gultekin_Oksuz.vcf" type="text/vcard"><svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9 0v-2H4V8h2V6h2v2h2v2H8v2zm9 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.700-5.300-4-8-4z"/></svg>Kişilere Ekle</a>
-
-   <div class="actions">
-    <a class="act" href="tel:+905458416977"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Ara</a>
-    <a class="act" href="https://wa.me/905458416977" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12a14 14 0 0 1-4.9-3c-1.6-1.5-2.7-3.4-2.8-3.6s-.7-1.6-.7-2.2c.02-1 .6-1.5.8-1.7.2-.2.45-.25.6-.25h.45c.15 0 .35-.05.55.4l.75 1.8c.05.15.1.3 0 .5-.1.2-.15.3-.3.45l-.4.5c-.15.15-.3.3-.1.6.15.3.7 1.2 1.55 1.9 1.05.95 1.95 1.25 2.25 1.4.3.15.45.1.6-.1l.85-1c.2-.25.4-.2.65-.1l1.7.8c.25.1.4.2.5.3.05.15.05.7-.2 1.4z"/></svg>WhatsApp</a>
-    <a class="act" href="https://t.me/tekinn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.9 3.4 2.6 10.9c-.9.35-.9 1 0 1.3l4.9 1.5 1.9 5.8c.2.6.45.75.9.4l2.7-2.2 4.9 3.6c.9.5 1.55.25 1.8-.85L23 4.5c.3-1.3-.5-1.9-1.1-1.1zM9 13.6l9.4-6c.45-.25.85-.1.5.2l-7.8 7-.3 3.2z"/></svg>Telegram</a>
-    <a class="act" href="https://www.linkedin.com/in/gultekinoksuz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 18.5H5.3V9.9H8zM6.65 8.7a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zM18.5 18.5h-2.7v-4.2c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.3H10V9.9h2.6v1.2a2.8 2.8 0 0 1 2.5-1.4c2.7 0 3.2 1.8 3.2 4.1z"/></svg>LinkedIn</a>
-   </div>
-
-   <div class="info">
-    <a href="mailto:info@thelisting.io"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v.4l-10 6.3L2 5.9zM2 8.2v10.3A1.5 1.5 0 0 0 3.5 20h17a1.5 1.5 0 0 0 1.5-1.5V8.2l-9.4 5.9a1.2 1.2 0 0 1-1.2 0z"/></svg>info@thelisting.io</a>
-    <a href="https://thelisting.io/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 9h-3a15.6 15.6 0 0 0-1.3-6A8 8 0 0 1 18.9 11zM12 4c.8 1 1.6 3.1 1.9 7h-3.8C10.4 7.1 11.2 5 12 4zM4 13h3a15.6 15.6 0 0 0 1.3 6A8 8 0 0 1 5.1 13zm3-2H5.1A8 8 0 0 1 9.4 5 15.6 15.6 0 0 0 8 11zm5 9c-.8-1-1.6-3.1-1.9-7h3.8c-.3 3.9-1.1 6-1.9 7zm2.6-1a15.6 15.6 0 0 0 1.3-6h3A8 8 0 0 1 14.6 19z"/></svg>thelisting.io</a>
-   </div>
-   <button class="share" onclick="shareCard()">Kartviziti Paylaş</button>
-  </main>
- <div class="coin"><span><img src="kartvizit/logo-t.png" alt=""></span></div>
-</div>
+<main class="wrap">
+ <img src="kart.webp" width="1024" height="1536" alt="Gültekin Öksüz - CFO, TheListing.io">
+ <svg viewBox="0 0 1024 1536" role="group" aria-label="Kartvizit bağlantıları">
+  <a href="Gultekin_Oksuz.vcf" aria-label="Kişilere Ekle" id="addBtn" type="text/vcard"><polygon points="195,792 872,885 862,978 190,882"/></a>
+  <a href="tel:+905458416977" aria-label="Ara" ><polygon points="188,912 335,925 318,1075 165,1058"/></a>
+  <a href="https://wa.me/905458416977" aria-label="WhatsApp" target="_blank" rel="noopener"><polygon points="355,938 512,950 495,1100 337,1085"/></a>
+  <a href="https://t.me/tekinn" aria-label="Telegram" target="_blank" rel="noopener"><polygon points="530,962 688,980 668,1138 518,1120"/></a>
+  <a href="https://www.linkedin.com/in/gultekinoksuz" aria-label="LinkedIn" target="_blank" rel="noopener"><polygon points="705,990 862,1005 843,1157 695,1135"/></a>
+  <a href="mailto:info@thelisting.io" aria-label="E-posta gönder" ><polygon points="160,1080 487,1127 478,1215 145,1165"/></a>
+  <a href="https://thelisting.io/" aria-label="Web sitesi" target="_blank" rel="noopener"><polygon points="500,1135 838,1185 830,1277 498,1220"/></a>
+  <a href="#" aria-label="Kartviziti paylaş" id="shareBtn"><polygon points="140,1188 828,1298 815,1405 122,1270"/></a>
+ </svg>
+</main>
 <div id="toast" role="status"></div>
 <script>
 /* Android: paylaşım menüsüyle Kişiler uygulamasını aç; olmazsa vcf indirilir ve yönerge gösterilir. iPhone'da vcf bağlantısı doğrudan Kişi Ekle açar */
@@ -98,6 +51,7 @@ document.getElementById('addBtn').addEventListener('click',async e=>{
  location.href='Gultekin_Oksuz.vcf?'+Date.now();
  toast('Dosya indi: bildirimden "Aç" veya İndirilenler\'den dosyaya dokunup Kişiler\'e kaydedin');});
 function shareCard(){if(navigator.share){navigator.share({title:'Gültekin Öksüz - TheListing.io',text:'Gültekin Öksüz | CFO - TheListing.io Dijital Kartvizit',url:location.href}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert('Sayfa bağlantısı panoya kopyalandı!'))}else{alert(location.href)}}
+document.getElementById('shareBtn').addEventListener('click',e=>{e.preventDefault();shareCard()});
 </script>
 </body>
 </html>
