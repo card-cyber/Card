@@ -1,0 +1,10 @@
+# Cloudflare Workers Builds bu dosyayı okur (Deploy command: npx wrangler deploy)
+name = "gultekin-card-bot"
+main = "bot/worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+# Dashboard'da girilen değişkenler/secret'lar deploy'da silinmesin
+keep_vars = true
+
+[observability]
+enabled = true
