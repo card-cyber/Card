@@ -69,7 +69,7 @@ body{font-family:'Plus Jakarta Sans','Segoe UI',Roboto,Helvetica,Arial,sans-seri
    <div class="title">CFO • TheListing.io</div>
    <p class="subtitle">Exchange Relations &amp; Listings for Web3 Projects</p>
 
-   <a class="cta" href="Gultekin_Oksuz.vcf" type="text/vcard"><svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9 0v-2H4V8h2V6h2v2h2v2H8v2zm9 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.700-5.300-4-8-4z"/></svg>Kişilere Ekle</a>
+   <a class="cta" id="addBtn" href="Gultekin_Oksuz.vcf" type="text/vcard"><svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9 0v-2H4V8h2V6h2v2h2v2H8v2zm9 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.700-5.300-4-8-4z"/></svg>Kişilere Ekle</a>
 
    <div class="actions">
     <a class="act" href="tel:+905458416977"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Ara</a>
@@ -87,6 +87,13 @@ body{font-family:'Plus Jakarta Sans','Segoe UI',Roboto,Helvetica,Arial,sans-seri
  </div>
 </div>
 <script>
+/* Android: paylaşım menüsüyle Kişiler uygulamasını doğrudan aç; olmazsa/iPhone'da vcf bağlantısı çalışır */
+document.getElementById('addBtn').addEventListener('click',async e=>{
+ if(!/Android/i.test(navigator.userAgent)||!navigator.canShare)return;
+ e.preventDefault();
+ try{const r=await fetch('Gultekin_Oksuz.vcf'),b=await r.blob(),f=new File([b],'Gultekin_Oksuz.vcf',{type:'text/vcard'});
+  if(navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(err){if(err&&err.name==='AbortError')return}
+ location.href='Gultekin_Oksuz.vcf'});
 function shareCard(){if(navigator.share){navigator.share({title:'Gültekin Öksüz - TheListing.io',text:'Gültekin Öksüz | CFO - TheListing.io Dijital Kartvizit',url:location.href}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert('Sayfa bağlantısı panoya kopyalandı!'))}else{alert(location.href)}}
 /* 3B eğim: parmak/fare ile kartı çevir, bırakınca yüzer hale dön */
 (function(){const s=document.getElementById('stack'),c=document.getElementById('card');let t;
