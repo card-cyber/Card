@@ -7,8 +7,10 @@ const LINKS = {
   telegram: "https://t.me/tekinn",
   linkedin: "https://www.linkedin.com/in/gultekinoksuz",
   website: "https://thelisting.io/",
-  mail: `${BASE}/mail.html`, // Telegram mailto: butonunu reddedebilir; bu sayfa mailto'ya yönlendirir
+  mailDirect: "mailto:info@thelisting.io?subject=Listing%20inquiry",
+  mail: `${BASE}/mail.html`, // Telegram mailto: butonunu reddederse yedek: bu sayfa mailto'ya yönlendirir
 };
+let mailtoOk = true; // Telegram mailto: kabul etmezse bir kez false olur, sonra yedek kullanılır
 
 // Mesajın altındaki yazı (en fazla 1024 karakter). Buradan düzenleyin.
 const CARDS = {
@@ -38,11 +40,11 @@ const CARDS = {
   },
 };
 
-function keyboard(lang) {
+function keyboard(lang, direct) {
   const t = CARDS[lang].labels;
   return {
     inline_keyboard: [
-      [{ text: t.li, url: LINKS.linkedin }, { text: t.mail, url: LINKS.mail }],
+      [{ text: t.li, url: LINKS.linkedin }, { text: t.mail, url: direct ? LINKS.mailDirect : LINKS.mail }],
       [{ text: t.share, switch_inline_query: "" }],
       [{ text: t.web, url: LINKS.website }],
     ],
@@ -76,20 +78,28 @@ async function sendVcf(env, chatId, lang) {
 async function onInlineQuery(env, q) {
   // Kullanıcının dili Türkçe ise Türkçe kart başa gelir
   const order = (q.from?.language_code || "").toLowerCase().startsWith("tr") ? ["tr", "en"] : ["en", "tr"];
-  const results = order.map((lang) => ({
-    type: "photo",
-    id: `card_${lang}`,
-    photo_url: CARDS[lang].photo,
-    thumbnail_url: CARDS[lang].photo,
-    photo_width: 1280,
-    photo_height: 934,
-    title: CARDS[lang].title,
-    description: CARDS[lang].description,
-    caption: CARDS[lang].caption,
-    reply_markup: keyboard(lang),
-  }));
+  const build = (direct) =>
+    order.map((lang) => ({
+      type: "photo",
+      id: `card_${lang}`,
+      photo_url: CARDS[lang].photo,
+      thumbnail_url: CARDS[lang].photo,
+      photo_width: 1280,
+      photo_height: 934,
+      title: CARDS[lang].title,
+      description: CARDS[lang].description,
+      caption: CARDS[lang].caption,
+      reply_markup: keyboard(lang, direct),
+    }));
   // Herkes kullanabilir: müşteri "Kartı Paylaş"a bastığında da kart çıkmalı.
-  return tg(env, "answerInlineQuery", { inline_query_id: q.id, results, cache_time: 60, is_personal: false });
+  const answer = (results) => tg(env, "answerInlineQuery", { inline_query_id: q.id, results, cache_time: 60, is_personal: false });
+  if (mailtoOk) {
+    const r = await answer(build(true));
+    if (r.ok) return r;
+    mailtoOk = false;
+    console.error("mailto rejected, falling back to mail.html");
+  }
+  return answer(build(false));
 }
 
 async function onMessage(env, m) {
