@@ -38,9 +38,9 @@ gl:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6
 us:'<svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9 0v-2H4V8h2V6h2v2h2v2H8v2zm9 2c-2.700 0-8 1.300-8 4v2h16v-2c0-2.700-5.300-4-8-4z"/></svg>',
 sh:'<svg viewBox="0 0 24 24"><path d="M18 16.100c-.8 0-1.500.3-2 .8l-7.100-4.200c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.200c.5.5 1.200.8 2 .8a3 3 0 1 0-3-3c0 .2 0 .5.1.7L8 9.800a3 3 0 1 0 0 4.400l7.100 4.200c-.1.2-.1.4-.1.6a2.900 2.900 0 1 0 3-2.900z"/></svg>'};
 const T={
-tr:{st:'Exchange Relations & Listings for Web3 Projects',b:[['li','LinkedIn','Profilimi Gör'],['ml','E-posta','Teklif İlet'],['us','Kişilere Ekle','Rehbere Kaydet'],['sh','Kartı Paylaş','Bağlantıyı Gönder'],['gl','Website','thelisting.io']]},
-en:{st:'Exchange Relations & Listings for Web3 Projects',b:[['li','LinkedIn','View Profile'],['ml','E-mail','Send an Inquiry'],['us','Add Contact','Save to Contacts'],['sh','Share Card','Send the Link'],['gl','Website','thelisting.io']]}};
+tr:{st:'Exchange Relations & Listings for Web3 Projects',b:[['li','LinkedIn','Profilimi Gör'],['ml','E-posta','Teklif İlet'],['sh','Kartı Paylaş','Bağlantıyı Gönder'],['gl','Website','thelisting.io']]},
+en:{st:'Exchange Relations & Listings for Web3 Projects',b:[['li','LinkedIn','View Profile'],['ml','E-mail','Send an Inquiry'],['sh','Share Card','Send the Link'],['gl','Website','thelisting.io']]}};
 const l=new URLSearchParams(location.search).get('lang')==='en'?'en':'tr';
 document.documentElement.lang=l;document.getElementById('st').textContent=T[l].st;
-document.getElementById('g').innerHTML=T[l].b.map(([k,a,s])=>`<div class="b ${k}${k==='gl'?' wide':''}">${I[k]}<div><b>${a}</b><small>${s}</small></div></div>`).join('');
+document.getElementById('g').innerHTML=T[l].b.map(([k,a,s])=>`<div class="b ${k}${(k==='gl'||k==='sh')?' wide':''}">${I[k]}<div><b>${a}</b><small>${s}</small></div></div>`).join('');
 </script></body></html>

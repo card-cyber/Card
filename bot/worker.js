@@ -14,8 +14,8 @@ const LINKS = {
 const CARDS = {
   en: {
     title: "Digital card (English)",
-    description: "Card image + 5 buttons",
-    photo: `${BASE}/telegram/kart-tg-en.jpg?v=2`,
+    description: "Card image + 4 buttons",
+    photo: `${BASE}/telegram/kart-tg-en.jpg?v=3`,
     caption:
       "Hi, I'm Gültekin. I handle exchange relations and listings for Web3 projects.\n\n" +
       "I work directly with listing teams at 40+ exchanges across Tier 1–3, helping projects identify suitable exchanges and manage the listing process end to end.\n\n" +
@@ -26,8 +26,8 @@ const CARDS = {
   },
   tr: {
     title: "Dijital kart (Türkçe)",
-    description: "Kart görseli + 5 buton",
-    photo: `${BASE}/telegram/kart-tg-tr.jpg?v=2`,
+    description: "Kart görseli + 4 buton",
+    photo: `${BASE}/telegram/kart-tg-tr.jpg?v=3`,
     caption:
       "Merhaba, ben Gültekin. Web3 projeleri için borsa ilişkileri ve listeleme süreçlerini yönetiyorum.\n\n" +
       "Tier 1–3 arasındaki 40'tan fazla borsanın listeleme ekipleriyle doğrudan çalışıyor, projelerin uygun borsaları belirlemesine ve listeleme sürecini baştan sona yönetmesine yardımcı oluyorum.\n\n" +
@@ -43,7 +43,7 @@ function keyboard(lang) {
   return {
     inline_keyboard: [
       [{ text: t.li, url: LINKS.linkedin }, { text: t.mail, url: LINKS.mail }],
-      [{ text: t.add, url: `https://t.me/${BOT_USERNAME}?start=vcf_${lang}` }, { text: t.share, switch_inline_query: "" }],
+      [{ text: t.share, switch_inline_query: "" }],
       [{ text: t.web, url: LINKS.website }],
     ],
   };
