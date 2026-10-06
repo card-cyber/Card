@@ -15,7 +15,7 @@ const CARDS = {
   en: {
     title: "Digital card (English)",
     description: "Card image + 5 buttons",
-    photo: `${BASE}/telegram/kart-tg-en.jpg`,
+    photo: `${BASE}/telegram/kart-tg-en.jpg?v=2`,
     caption:
       "Hi, I'm Gültekin. I handle exchange relations and listings for Web3 projects.\n\n" +
       "I work directly with listing teams at 40+ exchanges across Tier 1–3, helping projects identify suitable exchanges and manage the listing process end to end.\n\n" +
@@ -27,7 +27,7 @@ const CARDS = {
   tr: {
     title: "Dijital kart (Türkçe)",
     description: "Kart görseli + 5 buton",
-    photo: `${BASE}/telegram/kart-tg-tr.jpg`,
+    photo: `${BASE}/telegram/kart-tg-tr.jpg?v=2`,
     caption:
       "Merhaba, ben Gültekin. Web3 projeleri için borsa ilişkileri ve listeleme süreçlerini yönetiyorum.\n\n" +
       "Tier 1–3 arasındaki 40'tan fazla borsanın listeleme ekipleriyle doğrudan çalışıyor, projelerin uygun borsaları belirlemesine ve listeleme sürecini baştan sona yönetmesine yardımcı oluyorum.\n\n" +
