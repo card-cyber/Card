@@ -3,7 +3,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#06152b}
-.c{position:relative;width:1000px;height:1060px;overflow:hidden;font-family:'Plus Jakarta Sans','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#fff;
+.c{position:relative;width:1000px;height:1200px;overflow:hidden;font-family:'Plus Jakarta Sans','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#fff;
  background:radial-gradient(ellipse at 85% 8%,rgba(255,200,90,.55),transparent 38%),radial-gradient(ellipse at 80% 20%,rgba(30,110,255,.55),transparent 55%),linear-gradient(180deg,rgba(2,10,24,.15),rgba(2,10,24,.55)),url('bg-big.jpg') center/cover,#06152b}
 .c::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 30%,rgba(255,255,255,.9) 0 1.5px,transparent 2px),radial-gradient(circle at 30% 12%,rgba(255,220,140,.9) 0 2px,transparent 3px),radial-gradient(circle at 60% 40%,rgba(255,255,255,.7) 0 1.5px,transparent 2px),radial-gradient(circle at 92% 55%,rgba(255,210,120,.9) 0 2px,transparent 3px),radial-gradient(circle at 8% 60%,rgba(120,180,255,.9) 0 2px,transparent 3px);opacity:.8}
 .av{position:absolute;left:62px;top:48px;width:350px;height:350px;border-radius:50%;object-fit:cover;border:12px solid #e5b943;box-shadow:0 0 0 8px rgba(229,185,67,.18),0 0 60px rgba(229,185,67,.5),0 18px 40px rgba(0,0,0,.6)}
@@ -12,13 +12,14 @@ html,body{background:#06152b}
  background:linear-gradient(180deg,#fff3b8 0%,#f4d06a 40%,#c39420 62%,#f4d06a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 0 #6e4f0c) drop-shadow(0 12px 14px rgba(0,0,0,.65))}
 .tt{position:absolute;left:0;right:0;top:562px;text-align:center;font-size:50px;font-weight:800;letter-spacing:2px;color:#f4d06a;text-shadow:0 4px 12px rgba(0,0,0,.8)}
 .st{position:absolute;left:0;right:0;top:632px;text-align:center;font-size:35px;font-weight:500;color:#eaf1fb;text-shadow:0 3px 10px rgba(0,0,0,.8)}
-.g{position:absolute;left:40px;right:40px;top:712px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.b{height:150px;border-radius:18px;border:4px solid #d9aa32;display:flex;align-items:center;gap:12px;padding:0 14px;
+.g{position:absolute;left:40px;right:40px;top:712px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.b.wide{grid-column:1/-1;justify-content:center}
+.b{height:130px;border-radius:18px;border:4px solid #d9aa32;display:flex;align-items:center;gap:12px;padding:0 14px;
  background:linear-gradient(180deg,rgba(14,32,62,.92),rgba(5,16,36,.95));box-shadow:inset 0 0 0 2px rgba(255,220,130,.18),inset 0 2px 0 rgba(255,255,255,.12),0 10px 22px rgba(0,0,0,.5)}
-.b svg{flex:none;width:62px;height:62px;fill:#f4d06a;filter:drop-shadow(0 3px 0 #6e4f0c)}
+.b svg{flex:none;width:68px;height:68px;fill:#f4d06a;filter:drop-shadow(0 3px 0 #6e4f0c)}
 .b.tg svg{fill:#2aa3f2}.b.li svg{fill:#1b8fe8}
-.b b{display:block;white-space:nowrap;font-size:29px;font-weight:800;line-height:1.1}
-.b small{display:block;white-space:nowrap;margin-top:6px;font-size:20px;font-weight:500;color:#b9c8dc;line-height:1.1}
+.b b{display:block;white-space:nowrap;font-size:34px;font-weight:800;line-height:1.1}
+.b small{display:block;white-space:nowrap;margin-top:6px;font-size:24px;font-weight:500;color:#b9c8dc;line-height:1.1}
 </style></head><body>
 <div class="c">
  <img class="av" src="avatar.jpg" alt="">
@@ -37,9 +38,9 @@ gl:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6
 us:'<svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9 0v-2H4V8h2V6h2v2h2v2H8v2zm9 2c-2.700 0-8 1.300-8 4v2h16v-2c0-2.700-5.300-4-8-4z"/></svg>',
 sh:'<svg viewBox="0 0 24 24"><path d="M18 16.100c-.8 0-1.500.3-2 .8l-7.100-4.200c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.200c.5.5 1.200.8 2 .8a3 3 0 1 0-3-3c0 .2 0 .5.1.7L8 9.800a3 3 0 1 0 0 4.400l7.100 4.200c-.1.2-.1.4-.1.6a2.900 2.900 0 1 0 3-2.900z"/></svg>'};
 const T={
-tr:{st:'Exchange Relations & Listings for Web3 Projects',b:[['tg','Telegram','Sohbet Başlat'],['li','LinkedIn','Profilimi Gör'],['ml','E-posta','Teklif İlet'],['gl','Website','thelisting.io'],['us','Kişilere Ekle','Rehbere Kaydet'],['sh','Kartı Paylaş','Bağlantıyı Gönder']]},
-en:{st:'Exchange Relations & Listings for Web3 Projects',b:[['tg','Telegram','Start a Chat'],['li','LinkedIn','View Profile'],['ml','E-mail','Send an Inquiry'],['gl','Website','thelisting.io'],['us','Add Contact','Save to Contacts'],['sh','Share Card','Send the Link']]}};
+tr:{st:'Exchange Relations & Listings for Web3 Projects',b:[['li','LinkedIn','Profilimi Gör'],['ml','E-posta','Teklif İlet'],['us','Kişilere Ekle','Rehbere Kaydet'],['sh','Kartı Paylaş','Bağlantıyı Gönder'],['gl','Website','thelisting.io']]},
+en:{st:'Exchange Relations & Listings for Web3 Projects',b:[['li','LinkedIn','View Profile'],['ml','E-mail','Send an Inquiry'],['us','Add Contact','Save to Contacts'],['sh','Share Card','Send the Link'],['gl','Website','thelisting.io']]}};
 const l=new URLSearchParams(location.search).get('lang')==='en'?'en':'tr';
 document.documentElement.lang=l;document.getElementById('st').textContent=T[l].st;
-document.getElementById('g').innerHTML=T[l].b.map(([k,a,s])=>`<div class="b ${k}">${I[k]}<div><b>${a}</b><small>${s}</small></div></div>`).join('');
+document.getElementById('g').innerHTML=T[l].b.map(([k,a,s])=>`<div class="b ${k}${k==='gl'?' wide':''}">${I[k]}<div><b>${a}</b><small>${s}</small></div></div>`).join('');
 </script></body></html>
