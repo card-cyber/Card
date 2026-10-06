@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="UTF-8"><title>Telegram kart görseli</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#06152b}
+.c{position:relative;width:1000px;height:1060px;overflow:hidden;font-family:'Plus Jakarta Sans','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#fff;
+ background:radial-gradient(ellipse at 85% 8%,rgba(255,200,90,.55),transparent 38%),radial-gradient(ellipse at 80% 20%,rgba(30,110,255,.55),transparent 55%),linear-gradient(180deg,rgba(2,10,24,.15),rgba(2,10,24,.55)),url('bg-big.jpg') center/cover,#06152b}
+.c::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 30%,rgba(255,255,255,.9) 0 1.5px,transparent 2px),radial-gradient(circle at 30% 12%,rgba(255,220,140,.9) 0 2px,transparent 3px),radial-gradient(circle at 60% 40%,rgba(255,255,255,.7) 0 1.5px,transparent 2px),radial-gradient(circle at 92% 55%,rgba(255,210,120,.9) 0 2px,transparent 3px),radial-gradient(circle at 8% 60%,rgba(120,180,255,.9) 0 2px,transparent 3px);opacity:.8}
+.av{position:absolute;left:62px;top:48px;width:350px;height:350px;border-radius:50%;object-fit:cover;border:12px solid #e5b943;box-shadow:0 0 0 8px rgba(229,185,67,.18),0 0 60px rgba(229,185,67,.5),0 18px 40px rgba(0,0,0,.6)}
+.lg{position:absolute;right:20px;top:20px;width:460px;height:460px;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.7))}
+.nm{position:absolute;left:0;right:0;top:455px;text-align:center;font-size:84px;font-weight:800;letter-spacing:-1.5px;line-height:1;
+ background:linear-gradient(180deg,#fff3b8 0%,#f4d06a 40%,#c39420 62%,#f4d06a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 0 #6e4f0c) drop-shadow(0 12px 14px rgba(0,0,0,.65))}
+.tt{position:absolute;left:0;right:0;top:562px;text-align:center;font-size:50px;font-weight:800;letter-spacing:2px;color:#f4d06a;text-shadow:0 4px 12px rgba(0,0,0,.8)}
+.st{position:absolute;left:0;right:0;top:632px;text-align:center;font-size:35px;font-weight:500;color:#eaf1fb;text-shadow:0 3px 10px rgba(0,0,0,.8)}
+.g{position:absolute;left:40px;right:40px;top:712px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.b{height:150px;border-radius:18px;border:4px solid #d9aa32;display:flex;align-items:center;gap:12px;padding:0 14px;
+ background:linear-gradient(180deg,rgba(14,32,62,.92),rgba(5,16,36,.95));box-shadow:inset 0 0 0 2px rgba(255,220,130,.18),inset 0 2px 0 rgba(255,255,255,.12),0 10px 22px rgba(0,0,0,.5)}
+.b svg{flex:none;width:62px;height:62px;fill:#f4d06a;filter:drop-shadow(0 3px 0 #6e4f0c)}
+.b.tg svg{fill:#2aa3f2}.b.li svg{fill:#1b8fe8}
+.b b{display:block;white-space:nowrap;font-size:29px;font-weight:800;line-height:1.1}
+.b small{display:block;white-space:nowrap;margin-top:6px;font-size:20px;font-weight:500;color:#b9c8dc;line-height:1.1}
+</style></head><body>
+<div class="c">
+ <img class="av" src="avatar.jpg" alt="">
+ <img class="lg" src="logo-t.png" alt="">
+ <div class="nm">GÜLTEKİN ÖKSÜZ</div>
+ <div class="tt">CFO • THELISTING.IO</div>
+ <div class="st" id="st"></div>
+ <div class="g" id="g"></div>
+</div>
+<script>
+const I={
+tg:'<svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.6 8.2-1.9 8.900c-.15.65-.5.8-1.05.5l-2.900-2.150-1.400 1.350c-.15.15-.3.3-.6.3l.2-3 5.500-5c.25-.2-.05-.3-.35-.1l-6.800 4.300-2.900-.9c-.65-.2-.65-.65.15-.95l11.400-4.400c.5-.2 1 .12.8.95z"/></svg>',
+li:'<svg viewBox="0 0 24 24"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.600v16.800A1.600 1.600 0 0 0 3.600 22h16.800a1.600 1.600 0 0 0 1.600-1.600V3.600A1.600 1.600 0 0 0 20.400 2zM8 18.500H5.300V9.900H8zM6.650 8.700a1.550 1.550 0 1 1 0-3.100 1.550 1.550 0 0 1 0 3.100zM18.500 18.500h-2.700v-4.200c0-1 0-2.300-1.400-2.300s-1.600 1.100-1.600 2.200v4.300H10V9.900h2.600v1.200a2.800 2.800 0 0 1 2.500-1.400c2.700 0 3.200 1.800 3.200 4.100z"/></svg>',
+ml:'<svg viewBox="0 0 24 24"><path d="M2 5.500A1.500 1.500 0 0 1 3.500 4h17A1.500 1.500 0 0 1 22 5.500v.4l-10 6.300L2 5.900zM2 8.200v10.300A1.500 1.500 0 0 0 3.500 20h17a1.500 1.500 0 0 0 1.500-1.500V8.200l-9.400 5.900a1.200 1.200 0 0 1-1.200 0z"/></svg>',
+gl:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.900 9h-3a15.600 15.600 0 0 0-1.300-6A8 8 0 0 1 18.900 11zM12 4c.8 1 1.600 3.100 1.900 7h-3.800C10.400 7.100 11.200 5 12 4zM4 13h3a15.600 15.600 0 0 0 1.300 6A8 8 0 0 1 5.100 13zm3-2H5.100A8 8 0 0 1 9.400 5 15.600 15.600 0 0 0 8 11zm5 9c-.8-1-1.600-3.100-1.900-7h3.800c-.3 3.900-1.100 6-1.900 7zm2.600-1a15.600 15.600 0 0 0 1.300-6h3A8 8 0 0 1 14.600 19z"/></svg>',
+us:'<svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9 0v-2H4V8h2V6h2v2h2v2H8v2zm9 2c-2.700 0-8 1.300-8 4v2h16v-2c0-2.700-5.300-4-8-4z"/></svg>',
+sh:'<svg viewBox="0 0 24 24"><path d="M18 16.100c-.8 0-1.500.3-2 .8l-7.100-4.200c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.200c.5.5 1.200.8 2 .8a3 3 0 1 0-3-3c0 .2 0 .5.1.7L8 9.800a3 3 0 1 0 0 4.400l7.100 4.200c-.1.2-.1.4-.1.6a2.900 2.900 0 1 0 3-2.900z"/></svg>'};
+const T={
+tr:{st:'Exchange Relations & Listings for Web3 Projects',b:[['tg','Telegram','Sohbet Başlat'],['li','LinkedIn','Profilimi Gör'],['ml','E-posta','Teklif İlet'],['gl','Website','thelisting.io'],['us','Kişilere Ekle','Rehbere Kaydet'],['sh','Kartı Paylaş','Bağlantıyı Gönder']]},
+en:{st:'Exchange Relations & Listings for Web3 Projects',b:[['tg','Telegram','Start a Chat'],['li','LinkedIn','View Profile'],['ml','E-mail','Send an Inquiry'],['gl','Website','thelisting.io'],['us','Add Contact','Save to Contacts'],['sh','Share Card','Send the Link']]}};
+const l=new URLSearchParams(location.search).get('lang')==='en'?'en':'tr';
+document.documentElement.lang=l;document.getElementById('st').textContent=T[l].st;
+document.getElementById('g').innerHTML=T[l].b.map(([k,a,s])=>`<div class="b ${k}">${I[k]}<div><b>${a}</b><small>${s}</small></div></div>`).join('');
+</script></body></html>
