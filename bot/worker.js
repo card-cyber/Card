@@ -54,7 +54,9 @@ async function tg(env, method, body) {
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
-  return r.json();
+  const j = await r.json();
+  if (!j.ok) console.error("telegram error", method, j.error_code, j.description);
+  return j;
 }
 
 async function sendVcf(env, chatId, lang) {
@@ -65,7 +67,9 @@ async function sendVcf(env, chatId, lang) {
   form.append("caption", CARDS[lang].vcf);
   form.append("document", new Blob([await file.arrayBuffer()], { type: "text/vcard" }), "Gultekin_Oksuz.vcf");
   const r = await fetch(`https://api.telegram.org/bot${env.BOT_TOKEN}/sendDocument`, { method: "POST", body: form });
-  return r.json();
+  const j = await r.json();
+  if (!j.ok) console.error("telegram error sendDocument", j.error_code, j.description);
+  return j;
 }
 
 async function onInlineQuery(env, q) {
@@ -107,6 +111,7 @@ export default {
     if (req.method !== "POST" || url.pathname !== "/webhook") return new Response("ok");
     if (req.headers.get("x-telegram-bot-api-secret-token") !== env.WEBHOOK_SECRET) return new Response("forbidden", { status: 403 });
     const update = await req.json();
+    console.log("update", Object.keys(update).filter((k) => k !== "update_id").join(","));
     try {
       if (update.inline_query) await onInlineQuery(env, update.inline_query);
       else if (update.message) await onMessage(env, update.message);
