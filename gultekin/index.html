@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#14161b">
 <title>Gültekin Öksüz - CFO | TheListing.io</title>
 <meta property="og:title" content="Gültekin Öksüz - CFO | TheListing.io">
 <meta property="og:description" content="Exchange Relations &amp; Listings for Web3 Projects">
-<meta property="og:image" content="https://card-cyber.github.io/Card/gultekin/kart.webp">
+<meta property="og:image" content="https://card-cyber.github.io/Card/gultekin/kart-en.webp">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{background:#14161b}
 html,body{min-height:100%}
 body{min-height:100dvh;display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden}
-body::before{content:"";position:fixed;inset:-40px;background:url('kart.webp') center/cover;filter:blur(28px) brightness(.55);z-index:-1}
+body::before{content:"";position:fixed;inset:-40px;background:var(--bg,url('kart-en.webp')) center/cover;filter:blur(28px) brightness(.55);z-index:-1}
 .wrap{position:relative;width:min(100vw,calc(100dvh * 1024 / 1536),640px);aspect-ratio:1024/1536}
 .wrap img{display:block;width:100%;height:100%;user-select:none;-webkit-user-drag:none}
 .wrap svg{position:absolute;inset:0;width:100%;height:100%}
@@ -26,18 +27,18 @@ body::before{content:"";position:fixed;inset:-40px;background:url('kart.webp') c
 </head>
 <body>
 <main class="wrap">
- <img src="kart.webp" width="1024" height="1536" alt="Gültekin Öksüz - CFO, TheListing.io">
- <svg viewBox="0 0 1024 1536" role="group" aria-label="Kartvizit bağlantıları">
-  <a href="Gultekin_Oksuz.vcf" aria-label="Kişilere Ekle" id="addBtn" type="text/vcard"><polygon points="195,792 872,885 862,978 190,882"/></a>
-  <a href="tel:+905458416977" aria-label="Ara" ><polygon points="188,912 335,925 318,1075 165,1058"/></a>
-  <a href="https://wa.me/905458416977" aria-label="WhatsApp" target="_blank" rel="noopener"><polygon points="355,938 512,950 495,1100 337,1085"/></a>
-  <a href="https://t.me/tekinn" aria-label="Telegram" target="_blank" rel="noopener"><polygon points="530,962 688,980 668,1138 518,1120"/></a>
-  <a href="https://www.linkedin.com/in/gultekinoksuz" aria-label="LinkedIn" target="_blank" rel="noopener"><polygon points="705,990 862,1005 843,1157 695,1135"/></a>
-  <a href="mailto:info@thelisting.io" aria-label="E-posta gönder" ><polygon points="160,1080 487,1127 478,1215 145,1165"/></a>
-  <a href="https://thelisting.io/" aria-label="Web sitesi" target="_blank" rel="noopener"><polygon points="500,1135 838,1185 830,1277 498,1220"/></a>
-  <a href="#" aria-label="Kartviziti paylaş" id="shareBtn"><polygon points="140,1188 828,1298 815,1405 122,1270"/></a>
- </svg>
+ <img id="kart" width="1024" height="1536" alt="Gültekin Öksüz - CFO, TheListing.io">
+ <svg id="zones" viewBox="0 0 1024 1536" role="group"></svg>
 </main>
+<script>
+/* Dil: telefon/tarayıcı dili Türkçe ise Türkçe, diğer tüm durumlarda İngilizce */
+const LANGS={"en": {"img": "kart-en.webp", "alt": "Gültekin Öksüz - CFO, TheListing.io", "toast": "File downloaded: tap \"Open\" in the notification, or tap the file in Downloads and save it to Contacts", "copied": "Page link copied!", "share": "Gültekin Öksüz | CFO - TheListing.io Digital Business Card", "labels": {"add": "Add to contacts", "call": "Call now", "wa": "WhatsApp", "tg": "Telegram", "in": "LinkedIn", "mail": "Send email", "web": "Website", "share": "Share card"}, "zones": {"add": "195,792 872,885 862,978 190,882", "call": "188,912 335,925 318,1075 165,1058", "wa": "355,938 512,950 495,1100 337,1085", "tg": "530,962 688,980 668,1138 518,1120", "in": "705,990 862,1005 843,1157 695,1135", "mail": "160,1080 487,1127 478,1215 145,1165", "web": "500,1135 838,1185 830,1277 498,1220", "share": "140,1188 828,1298 815,1405 122,1270"}}, "tr": {"img": "kart-tr.webp", "alt": "Gültekin Öksüz - CFO, TheListing.io", "toast": "Dosya indi: bildirimden \"Aç\"a veya İndirilenler'den dosyaya dokunup Kişiler'e kaydedin", "copied": "Sayfa bağlantısı panoya kopyalandı!", "share": "Gültekin Öksüz | CFO - TheListing.io Dijital Kartvizit", "labels": {"add": "Kişilerime ekle", "call": "Hemen ara", "wa": "WhatsApp", "tg": "Telegram", "in": "LinkedIn", "mail": "E-posta gönder", "web": "Web sitesi", "share": "Kartı paylaş"}, "zones": {"add": "165,853 893,910 888,1010 153,945", "call": "147,978 310,988 300,1140 132,1130", "wa": "330,990 503,1003 493,1155 320,1143", "tg": "525,1008 697,1022 690,1172 518,1160", "in": "717,1025 887,1038 885,1190 710,1175", "mail": "122,1155 497,1180 495,1275 120,1245", "web": "515,1187 883,1215 880,1308 513,1280", "share": "108,1268 880,1332 878,1440 105,1372"}}};
+const LINKS={"add": ["Gultekin_Oksuz.vcf", {"id": "addBtn", "type": "text/vcard"}], "call": ["tel:+905458416977", {}], "wa": ["https://wa.me/905458416977", {"target": "_blank", "rel": "noopener"}], "tg": ["https://t.me/tekinn", {"target": "_blank", "rel": "noopener"}], "in": ["https://www.linkedin.com/in/gultekinoksuz", {"target": "_blank", "rel": "noopener"}], "mail": ["mailto:info@thelisting.io", {}], "web": ["https://thelisting.io/", {"target": "_blank", "rel": "noopener"}], "share": ["#", {"id": "shareBtn"}]};
+const lang=((navigator.languages&&navigator.languages[0])||navigator.language||'en').toLowerCase().startsWith('tr')?'tr':'en';
+const L=LANGS[lang];document.documentElement.lang=lang;
+const kart=document.getElementById('kart');kart.alt=L.alt;kart.src=L.img;
+document.body.style.setProperty('--bg','url('+L.img+')');document.getElementById('zones').innerHTML=Object.entries(LINKS).map(([k,[h,at]])=>{const x=Object.entries(at).map(([n,v])=>n+'="'+v+'"').join(' ');return '<a href="'+h+'" aria-label="'+L.labels[k]+'" '+x+'><polygon points="'+L.zones[k]+'"/></a>'}).join('');
+</script>
 <div id="toast" role="status"></div>
 <script>
 /* Android: paylaşım menüsüyle Kişiler uygulamasını aç; olmazsa vcf indirilir ve yönerge gösterilir. iPhone'da vcf bağlantısı doğrudan Kişi Ekle açar */
@@ -49,8 +50,8 @@ document.getElementById('addBtn').addEventListener('click',async e=>{
   for(const type of ['text/vcard','text/x-vcard','text/directory']){const f=new File([b],'Gultekin_Oksuz.vcf',{type});
    if(navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}}catch(err){if(err&&err.name==='AbortError')return}}
  location.href='Gultekin_Oksuz.vcf?'+Date.now();
- toast('Dosya indi: bildirimden "Aç" veya İndirilenler\'den dosyaya dokunup Kişiler\'e kaydedin');});
-function shareCard(){if(navigator.share){navigator.share({title:'Gültekin Öksüz - TheListing.io',text:'Gültekin Öksüz | CFO - TheListing.io Dijital Kartvizit',url:location.href}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert('Sayfa bağlantısı panoya kopyalandı!'))}else{alert(location.href)}}
+ toast(L.toast);});
+function shareCard(){if(navigator.share){navigator.share({title:'Gültekin Öksüz - TheListing.io',text:L.share,url:location.href}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert(L.copied))}else{alert(location.href)}}
 document.getElementById('shareBtn').addEventListener('click',e=>{e.preventDefault();shareCard()});
 </script>
 </body>
