@@ -93,7 +93,7 @@ document.getElementById('addBtn').addEventListener('click',async e=>{
  e.preventDefault();
  try{const r=await fetch('Gultekin_Oksuz.vcf'),b=await r.blob(),f=new File([b],'Gultekin_Oksuz.vcf',{type:'text/vcard'});
   if(navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(err){if(err&&err.name==='AbortError')return}
- location.href='Gultekin_Oksuz.vcf'});
+ location.href='Gultekin_Oksuz.vcf?'+Date.now()});
 function shareCard(){if(navigator.share){navigator.share({title:'Gültekin Öksüz - TheListing.io',text:'Gültekin Öksüz | CFO - TheListing.io Dijital Kartvizit',url:location.href}).catch(()=>{})}else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert('Sayfa bağlantısı panoya kopyalandı!'))}else{alert(location.href)}}
 /* 3B eğim: parmak/fare ile kartı çevir, bırakınca yüzer hale dön */
 (function(){const s=document.getElementById('stack'),c=document.getElementById('card');let t;
