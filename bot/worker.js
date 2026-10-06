@@ -14,25 +14,25 @@ const LINKS = {
 const CARDS = {
   en: {
     title: "Digital card (English)",
-    description: "Card image + 6 buttons",
-    photo: `${BASE}/telegram/kart-tg-en.jpg`,
+    description: "Card image + 5 buttons",
+    photo: `${BASE}/telegram/kart-tg-en.jpg?v=2`,
     caption:
       "Hi, I'm Gültekin. I handle exchange relations and listings for Web3 projects.\n\n" +
       "I work directly with listing teams at 40+ exchanges across Tier 1–3, helping projects identify suitable exchanges and manage the listing process end to end.\n\n" +
       "If you're exploring listings, happy to connect and hear what you're building.",
-    labels: { tg: "✈️ Telegram", li: "in LinkedIn", mail: "✉️ E-mail", web: "🌐 Website", add: "👤 Contact", share: "🔗 Share Card" },
+    labels: { tg: "✈️ Telegram", li: "in LinkedIn", mail: "✉️ E-mail", web: "🌐 Website", add: "👤 Add Contact", share: "🔗 Share Card" },
     vcf: "Tap the file to save my contact details.",
     welcome: "This bot sends Gültekin Öksüz's digital business card. In any chat, type @" + BOT_USERNAME + " and pick a card.",
   },
   tr: {
     title: "Dijital kart (Türkçe)",
-    description: "Kart görseli + 6 buton",
-    photo: `${BASE}/telegram/kart-tg-tr.jpg`,
+    description: "Kart görseli + 5 buton",
+    photo: `${BASE}/telegram/kart-tg-tr.jpg?v=2`,
     caption:
       "Merhaba, ben Gültekin. Web3 projeleri için borsa ilişkileri ve listeleme süreçlerini yönetiyorum.\n\n" +
       "Tier 1–3 arasındaki 40'tan fazla borsanın listeleme ekipleriyle doğrudan çalışıyor, projelerin uygun borsaları belirlemesine ve listeleme sürecini baştan sona yönetmesine yardımcı oluyorum.\n\n" +
       "Listeleme seçeneklerini araştırıyorsanız, projenizi dinlemekten memnuniyet duyarım.",
-    labels: { tg: "✈️ Telegram", li: "in LinkedIn", mail: "✉️ E-posta", web: "🌐 Website", add: "👤 Kişi Ekle", share: "🔗 Paylaş" },
+    labels: { tg: "✈️ Telegram", li: "in LinkedIn", mail: "✉️ E-posta", web: "🌐 Website", add: "👤 Kişilere Ekle", share: "🔗 Kartı Paylaş" },
     vcf: "Kişi bilgilerimi kaydetmek için dosyaya dokunun.",
     welcome: "Bu bot Gültekin Öksüz'ün dijital kartvizitini gönderir. Herhangi bir sohbette @" + BOT_USERNAME + " yazıp bir kart seçin.",
   },
@@ -42,8 +42,9 @@ function keyboard(lang) {
   const t = CARDS[lang].labels;
   return {
     inline_keyboard: [
-      [{ text: t.tg, url: LINKS.telegram }, { text: t.li, url: LINKS.linkedin }, { text: t.mail, url: LINKS.mail }],
-      [{ text: t.web, url: LINKS.website }, { text: t.add, url: `https://t.me/${BOT_USERNAME}?start=vcf_${lang}` }, { text: t.share, switch_inline_query: "" }],
+      [{ text: t.li, url: LINKS.linkedin }, { text: t.mail, url: LINKS.mail }],
+      [{ text: t.add, url: `https://t.me/${BOT_USERNAME}?start=vcf_${lang}` }, { text: t.share, switch_inline_query: "" }],
+      [{ text: t.web, url: LINKS.website }],
     ],
   };
 }
@@ -81,7 +82,7 @@ async function onInlineQuery(env, q) {
     photo_url: CARDS[lang].photo,
     thumbnail_url: CARDS[lang].photo,
     photo_width: 1280,
-    photo_height: 1357,
+    photo_height: 1536,
     title: CARDS[lang].title,
     description: CARDS[lang].description,
     caption: CARDS[lang].caption,
