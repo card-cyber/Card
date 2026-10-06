@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Email - Gültekin Öksüz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100dvh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font-family:system-ui,'Segoe UI',Roboto,Arial,sans-serif;color:#fff;background:#06152b}
+a{display:inline-block;margin-top:18px;padding:14px 22px;border-radius:10px;background:linear-gradient(160deg,#f6e08f,#cfa23a 50%,#e9c960);color:#1d1405;font-weight:800;text-decoration:none}
+p{color:#b9c8dc;font-size:14px;margin-top:10px}
+</style>
+</head>
+<body>
+<main>
+ <h1 style="font-size:20px">Opening your email app…</h1>
+ <p>E-posta uygulamanız açılıyor…</p>
+ <a id="m" href="mailto:info@thelisting.io?subject=Listing%20inquiry">info@thelisting.io</a>
+</main>
+<script>setTimeout(function(){location.href=document.getElementById('m').href},200)</script>
+</body>
+</html>
